@@ -24,7 +24,7 @@ To make it easier for you to complete this task, we've added snapshot tests veri
 npm run test
 ```
 
-If you haven't changed anything you should see two test failures showing you what exactly we expect the app to do.
+If you haven't changed anything you should see two test failures saying "Component is not a function"—that's because there's nothing in the `TodoList.js` and `TodoItem.js` files yet! Once you've put components into them you'll see exactly what we're expecting the components to do.
 
 ## License
 
