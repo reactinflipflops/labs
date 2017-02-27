@@ -1,5 +1,5 @@
 /**
- * This component should render a todo item as an <input type="checkbox" /> with a label
+ * DON'T CHANGE THIS FILE
  */
 import React, { Component } from 'react';
 

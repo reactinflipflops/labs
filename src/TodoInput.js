@@ -1,5 +1,5 @@
 /**
- * This component should render a controlled input for text
+ * DON'T CHANGE THIS FILE
  */
 import React from 'react';
 

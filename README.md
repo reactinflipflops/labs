@@ -1,12 +1,14 @@
-# Lab #2: Interaction and State Management
+# Lab #5: Redux
 
-Your task in this lab is to make the todo list from the last lab interactive. (we've pre-filled the solution from the last lab, you won't have to do that again!) It should be possible to check items and to add new items.
+Your task in this lab is to redux-ify the todo list from the second and third lab. (we've pre-filled the solution from the interaction lab, you won't have to do that again!) It should be possible to check items and to add new items, with the items and the value of the input being stored in the store.
 
 This is what the finished app should look like:
 
 ![Checking todos and adding new ones](https://cloud.githubusercontent.com/assets/7525670/22978746/4121f3de-f394-11e6-8e19-f366754d0f47.gif)
 
-You'll need to fill out the `TodoInput.js` component, and add some functionality to `TodoItem` and (mostly) `TodoList`.
+(exactly the same as it does now)
+
+You'll need to setup Redux and `react-redux` in the `App.js` file, connect the `TodoList` with the Redux state, create three actions in `actions.js` and write your reducer to handle those three actions in `reducer.js`.
 
 ## Testing
 
@@ -16,7 +18,7 @@ To make it easier for you to complete this task, we've (again) added tests verif
 npm run test
 ```
 
-If you haven't changed anything you should see test failures showing you what exactly we expect the app to do. (or a "Component not found" for the `TodoInput` if you haven't created the input yet)
+If you haven't changed anything you should see test failures showing you what exactly we expect the app to do. (or a bunch of "function not found" if you haven't changed anything yet)
 
 ## License
 

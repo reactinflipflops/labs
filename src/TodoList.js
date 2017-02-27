@@ -1,38 +1,53 @@
 /**
- * This component should manage the todo items, letting users check existing ones and add new ones
+ * Connect this component to the Redux state for the items and the input value
  */
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import TodoItem from './TodoItem';
 import TodoInput from './TodoInput';
-import {
-	checkItem,
-	addItem,
-	editInput,
-} from './actions';
 
 class TodoList extends Component {
+	state = {
+		items: this.props.items,
+		inputValue: '',
+	}
+
 	// Check an item
 	checkItem = (text) => {
-		this.props.dispatch(checkItem(text));
+		this.setState({
+			items: this.state.items.map(item => {
+				if (item.text !== text) return item;
+
+				return {
+					...item,
+					checked: !item.checked,
+				};
+			}),
+		});
 	}
 
 	// Add an item
 	addItem = (evt) => {
 		evt.preventDefault();
-		this.props.dispatch(addItem());
+		this.setState({
+			items: this.state.items.concat([{
+				text: this.state.inputValue,
+				checked: false,
+			}]),
+		});
 	}
 
 	// Edit the input
 	editInput = (evt) => {
-		this.props.dispatch(editInput(evt.target.value));
+		this.setState({
+			inputValue: evt.target.value,
+		})
 	}
 
 	render() {
 		return (
 			<div>
 				<ul>
-					{this.props.items.map((item, index) => (
+					{this.state.items.map((item, index) => (
 						<li key={index}>
 							<TodoItem
 								onClick={this.checkItem}
@@ -45,7 +60,7 @@ class TodoList extends Component {
 				<form onSubmit={this.addItem}>
 					<TodoInput
 						onChange={this.editInput}
-						value={this.props.value}
+						value={this.state.value}
 					/>
 				</form>
 			</div>
@@ -53,11 +68,4 @@ class TodoList extends Component {
 	}
 }
 
-const mapStateToProps = (state) => {
-	return {
-		items: state.items,
-		inputValue: state.inputValue,
-	};
-};
-
-export default connect(mapStateToProps)(TodoList);
+export default TodoList;

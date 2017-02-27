@@ -1,3 +1,6 @@
+/**
+ * DON'T CHANGE THIS FILE
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';

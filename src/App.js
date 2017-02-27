@@ -1,16 +1,23 @@
+/**
+ * Set up redux store and react-redux Provider in this file
+ */
 import React from 'react';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
 import TodoList from './TodoList';
-import mainReducer from './reducer';
 
-const store = createStore(mainReducer);
+const items = [{
+	text: 'Get to Las Palmas 🌴',
+	checked: true,
+}, {
+	text: 'Learn the basics of React 👩‍🎓',
+	checked: false,
+}, {
+	text: 'Go surfing 🏄',
+	checked: false,
+}];
 
 const App = () => {
 	return (
-    <Provider store={store}>
-		  <TodoList />
-    </Provider>
+		 <TodoList items={items} />
 	)
 }
 
