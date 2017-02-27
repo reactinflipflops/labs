@@ -14,8 +14,12 @@ const items = [{
   checked: false,
 }];
 
-it('should render the passed-in items', () => {
-	const tree = toJson(shallow(<TodoList items={items} />));
+it('should render the items from the Redux state', () => {
+	const tree = toJson(shallow(<TodoList />, {
+    context: {
+
+    }
+  }));
 	expect(tree).toMatchSnapshot();
 });
 

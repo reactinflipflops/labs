@@ -1,21 +1,16 @@
 import React from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import TodoList from './TodoList';
+import mainReducer from './reducer';
 
-// The todo items
-const items = [{
-  text: 'Get to Las Palmas 🌴',
-  checked: true,
-}, {
-  text: 'Learn the basics of React 👩‍🎓',
-  checked: false,
-}, {
-  text: 'Go surfing 🏄',
-  checked: false,
-}]
+const store = createStore(mainReducer);
 
 const App = () => {
 	return (
-		<TodoList items={items} />
+    <Provider store={store}>
+		  <TodoList />
+    </Provider>
 	)
 }
 
