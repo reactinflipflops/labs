@@ -1,22 +1,12 @@
-# Lab #2: Interaction and State Management
+# Lab #6: Testing
 
-Your task in this lab is to make the todo list from the last lab interactive. (we've pre-filled the solution from the last lab, you won't have to do that again!) It should be possible to check items and to add new items.
+Your task in this lab is to get the todo list from the last lab to **100% test coverage**. (we've pre-filled the solution from the last lab, you won't have to do that again.)
 
-This is what the finished app should look like:
-
-![Checking todos and adding new ones](https://cloud.githubusercontent.com/assets/7525670/22978746/4121f3de-f394-11e6-8e19-f366754d0f47.gif)
-
-You'll need to fill out the `TodoInput.js` component, and add some functionality to `TodoItem` and (mostly) `TodoList`.
+**Do not cheat by looking at old labs again!** That would hurt your learning experience, and on top of that none of them have 100% coverage anyway.
 
 ## Testing
 
-To make it easier for you to complete this task, we've (again) added tests verifying that you've arrived at the correct app. This command will run the tests:
-
-```sh
-npm run test
-```
-
-If you haven't changed anything you should see test failures showing you what exactly we expect the app to do. (or a "Component not found" for the `TodoInput` if you haven't created the input yet)
+There is no test for this lab! (duh) We've enabled test coverage output, so when you run `npm run test` it outputs the percentage of your app that you've covered in your tests.
 
 ## License
 
