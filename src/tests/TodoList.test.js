@@ -1,7 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import TodoList from '../TodoList';
+import { TodoList } from '../TodoList';
 
 const items = [{
   text: 'Get to Las Palmas 🌴',
@@ -15,35 +15,43 @@ const items = [{
 }];
 
 it('should render the items from the Redux state', () => {
-	const tree = toJson(shallow(<TodoList />, {
-    context: {
-
-    }
-  }));
+	const tree = toJson(shallow(<TodoList items={items} />));
 	expect(tree).toMatchSnapshot();
 });
 
-it('should set the value of the TodoInput from the state', () => {
-	const component = shallow(<TodoList items={items} />);
-  component.setState({
-    value: 'Test item'
-  });
+it('should set the value of the TodoInput from the Redux state', () => {
+	const component = shallow(<TodoList items={[]} inputValue="Test value" />);
 	expect(toJson(component)).toMatchSnapshot();
 });
 
-it('should change the value of the TodoInput from the TodoInput', () => {
-	const component = shallow(<TodoList items={items} />);
+it('should dispatch the edit input action when new text is entered', () => {
+  const dispatch = jest.fn();
+	const component = shallow(<TodoList items={[]} dispatch={dispatch} />);
   component.find('TodoInput').simulate('change', { target: { value: 'Changed input' }});
-	expect(toJson(component)).toMatchSnapshot();
+  expect(dispatch).toHaveBeenCalledWith({
+    type: 'EDIT_INPUT',
+    text: 'Changed input'
+  });
 });
 
-it('should add an item based on the value in the state', () => {
-	const component = shallow(<TodoList items={items} />);
+it('should dispatch the add item action when an item is added', () => {
+  const dispatch = jest.fn();
+	const component = shallow(<TodoList items={[]} dispatch={dispatch} />);
   const preventDefault = jest.fn();
-  component.setState({
-    value: 'Test item'
-  });
   component.find('form').simulate('submit', { preventDefault });
-	expect(toJson(component)).toMatchSnapshot();
   expect(preventDefault).toBeCalled();
+  expect(dispatch).toHaveBeenCalledWith({
+    type: 'ADD_ITEM'
+  });
+});
+
+it('should dispatch the check item action when an item is clicked', () => {
+  const dispatch = jest.fn();
+	const component = mount(<TodoList items={items} dispatch={dispatch} />);
+  const preventDefault = jest.fn();
+  component.find('input').at(0).simulate('change');
+  expect(dispatch).toHaveBeenCalledWith({
+    type: 'CHECK_ITEM',
+    text: 'Get to Las Palmas 🌴'
+  });
 });
