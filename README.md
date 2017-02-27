@@ -5,13 +5,13 @@ Welcome, we're happy to have you here with us in Las Palmas! 🌴☀️🏄
 Before the workshop starts please make sure you can get this repository and run it locally:
 
 ```
-git clone https://github.com/mxstbr/riff.git
+git clone https://github.com/reactinflipflops/riff.git
 cd riff
 npm install
 npm start
 ```
 
-A browser window should open at `localhost:3000` (if not, try going to that URL manually) and you should see a welcome message. If so, you're set up and ready to go! 
+A browser window should open at `localhost:3000` (if not, try going to that URL manually) and you should see a welcome message. If so, you're set up and ready to go!
 
 Make sure you have [`git`](https://git-scm.com/) and the latest stable version of [Node.js](https://nodejs.org/en/) installed. If any of these commands fail, please reinstall the relevant binary.
 
