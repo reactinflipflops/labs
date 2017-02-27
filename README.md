@@ -1,12 +1,14 @@
 # Lab #6: Testing
 
-Your task in this lab is to get the todo list from the last lab to **100% test coverage**. (we've pre-filled the solution from the last lab, you won't have to do that again.)
+Your task in this lab is to get the todo list from the last lab to **100% test coverage and be thoroughly tested**. (we've pre-filled the solution from the last lab, you won't have to do that again.) This is what your console output should look like when you're done:
 
-**Do not cheat by looking at old labs again!** That would hurt your learning experience, and on top of that none of them have 100% coverage anyway.
+![A terminal showcasing 100% test coverage output for the todo app](https://cloud.githubusercontent.com/assets/7525670/23364885/ba6f2316-fcf8-11e6-8019-d9d6f04fe4ba.png)
+
+**Do not cheat by looking at old labs again or by using anything other than shallow rendering!** That would hurt your learning experience, so please resist the temptation. We want you to think through this now so you can do it for your own apps afterwards!
 
 ## Testing
 
-There is no test for this lab! (duh) We've enabled test coverage output, so when you run `npm run test` it outputs the percentage of your app that you've covered in your tests.
+There is no test for this lab! (duh) We've enabled test coverage output (by passing the `--coverage` option to Jest), so when you run `npm run test` it outputs the percentage of your app that you've covered in your tests.
 
 ## License
 
