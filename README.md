@@ -1,20 +1,22 @@
-# Lab #1: React Basics
+# Lab #7: Higher Order Components
 
-Your task in this lab is to create a simple todo list. This is what the finished app should look like:
+This lab is split into three parts which can be found in these branches:
+- 7-1-hoc
+- 7-2-hoc
+- 7-3-hoc
 
-![Three todo items](https://cloud.githubusercontent.com/assets/7525670/22934361/f813c728-f2ce-11e6-931f-68d4775a7541.png)
+# Part 1
 
-You need to fill out the `TodoList.js` and the `TodoItem.js` components. The items to be rendered are defined in the `items` variable in the `index.js` file and are passed into the `TodoList.js` component as `this.props.items`.
+Your task in this lab is to create a simple higher order component to set a default property `count` with the value `9`.
 
-The `TodoList` should then render one `TodoItem.js` per item passed to it via `this.props.items`.
-
-The `TodoItem` renders the item as an `<input type="checkbox" />` with a label that contains the text and that is either checked or unchecked.
+You need to fill out the `withDefaultCountPropNine.js`. You can see how this higher order component is used in `index.js`.
 
 ```sh
-index.js    # This ReactDOM.renders and passes the items to the TodoList
-TodoList.js # This should render the TodoItems
-TodoItem.js # This should render a todo item
+index.js                    # Renders an Counter wrapped by withDefaultCountPropNine
+withDefaultCountPropNine.js # This should export the higher order component
 ```
+
+With `npm start` you can run the application, but it will fail until you implemented `withDefaultCountPropNine`.
 
 ## Testing
 

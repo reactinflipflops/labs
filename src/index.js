@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import TodoList from './TodoList';
+import withDefaultCountPropNine from './withDefaultCountPropNine';
 
-// The todo items
-const items = [{
-  text: 'Get to Las Palmas 🌴',
-  checked: true,
-}, {
-  text: 'Learn the basics of React 👩‍🎓',
-  checked: false,
-}, {
-  text: 'Go surfing 🏄',
-  checked: false,
-}]
+const Counter = ({ count }) => (
+  <div>Count: {count}</div>
+)
+
+const CounterWithDefaultNine = withDefaultCountPropNine(Counter);
+
+const App = () => (
+  <div>
+    <CounterWithDefaultNine />
+    <CounterWithDefaultNine count={22} />
+  </div>
+)
 
 ReactDOM.render(
-  <TodoList items={items} />,
+  <App />,
   document.getElementById('root')
 );
