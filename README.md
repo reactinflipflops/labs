@@ -5,18 +5,18 @@ This lab is split into three parts which can be found in these branches:
 - 7-2-hoc
 - 7-3-hoc
 
-# Part 1
+# Part 2
 
-Your task in this lab is to create a simple higher order component to set a default property `count` with the value `9`.
+Your task in this lab is to create a simple higher order component to set a default property `count`. The default count has to be set when wrapping the component.
 
-You need to fill out the `withDefaultCountPropNine.js`. You can see how this higher order component is used in `index.js`.
+You need to fill out the `withDefaultCountProp.js`. You can see how this higher order component is used in `index.js`.
 
 ```sh
-index.js                    # Renders an Counter wrapped by withDefaultCountPropNine
-withDefaultCountPropNine.js # This should export the higher order component
+index.js                # Renders a Counter wrapped by withDefaultCountProp
+withDefaultCountProp.js # This should export the higher order component
 ```
 
-With `npm start` you can run the application, but it will fail until you implemented `withDefaultCountPropNine`.
+With `npm start` you can run the application, but it will fail until you implemented `withDefaultCountProp`.
 
 ## Testing
 
