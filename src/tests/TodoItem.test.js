@@ -4,7 +4,7 @@ import toJson from 'enzyme-to-json';
 import TodoItem from '../TodoItem';
 
 const item = {
-  text: 'Get to Las Palmas 🌴',
+  text: 'Get to the workshop 🚶‍♀️',
   checked: true,
 };
 
