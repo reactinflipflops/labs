@@ -3,7 +3,7 @@ exports[`test should render the passed-in items 1`] = `
   <li>
     <TodoItem
       checked={true}
-      text="Get to Las Palmas 🌴" />
+      text="Get to the workshop 🚶‍♀️" />
   </li>
   <li>
     <TodoItem
@@ -13,7 +13,7 @@ exports[`test should render the passed-in items 1`] = `
   <li>
     <TodoItem
       checked={false}
-      text="Go surfing 🏄" />
+      text="Write some apps 💻" />
   </li>
 </ul>
 `;
